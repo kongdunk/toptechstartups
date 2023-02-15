@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { useEffect, useState } from "react"
 import record from '../data/topTechStartUps.json'
 
@@ -14,8 +15,11 @@ export default function Info(){
     },)
     return(
         <>
+            <Head>
+                <title>Info</title>
+            </Head>
             <div className="listContainer">
-                <h1> Top Tech Startup Company List </h1>
+                <h1 id="topHeader"> Top Tech Startup Company List </h1>
                 <h2> Showing {displayCount} jobs </h2>
                 <a href="/  " className='allJobsLink'>back to home</a>
                 <input className="numberInput" type="text" placeholder="number of companies to show" onChange={handleChange} />
