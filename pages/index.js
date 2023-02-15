@@ -25,6 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={styles.main}>
+        <h1>About Page</h1>
         <div className='logoContainer'>
           <img className='logo' src="topstartups.png" alt="" srcSet="" />
         </div>
