@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import record from '../data/topTechStartUps.json'
 import BasicCard from './basicCard'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Info from './info'
 import { useRouter } from 'next/router'
 import Stack from '@mui/material/Stack';
@@ -16,6 +16,11 @@ export default function Home() {
   const handleClick = () => {
     router.push("info")
   }
+  useEffect(() => {
+    if(jobs > 133){
+      setJobs(0)
+    }
+},)
   return (
     <>
       <Head>
@@ -25,11 +30,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={styles.main}>
-        <h1>About Page</h1>
         <div className='logoContainer'>
           <img className='logo' src="topstartups.png" alt="" srcSet="" />
         </div>
-        <a href="info">see all jobs</a>
+        <a href="info" className='allJobsLink'>see all jobs</a>
         <div className='cardSectionContainer'>
           {
             record.slice(jobs,jobs+6).map((e) => <div key={e.id} className='cardContainer'>

@@ -125,3 +125,32 @@ a {
 .logo {
   width: 25%;
 }
+.listBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+  background-color: #add8e6;
+  width: 45%;
+  padding: 2rem;
+}
+.listContainer {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.companyLink {
+  text-decoration: underline;
+}
+.allJobsLink {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.numberInput {
+  width: 15%;
+  text-align: center;
+}
