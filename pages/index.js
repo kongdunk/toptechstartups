@@ -1,21 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import record from '../data/topTechStartUps.json'
 import BasicCard from './basicCard'
 import { useEffect, useState } from 'react'
-import Info from './info'
-import { useRouter } from 'next/router'
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
 export default function Home() {
-  const router = useRouter()
   const [jobs, setJobs] = useState(0); 
-  const handleClick = () => {
-    router.push("info")
-  }
   useEffect(() => {
     if(jobs > 133){
       setJobs(0)
@@ -30,19 +21,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={styles.main}>
+        <div>
         <div className='logoContainer'>
           <img className='logo' src="topstartups.png" alt="" srcSet="" />
         </div>
         <a href="info" className='allJobsLink'>see all jobs</a>
+        </div>
         <div className='cardSectionContainer' id='colourContainer'>
           {
             record.slice(jobs,jobs+6).map((e) => <div key={e.id} className='cardContainer'>
               <BasicCard className='basicCard' companyName={e.company_name} headline={e.headline} location={e.locations} website={e.website}/>
             </div>)
           }
-        <div>
-          <Button onClick={() => ((jobs > 0)? setJobs(jobs-6): setJobs(0))} variant="contained">Back</Button>
-          <Button onClick={() => setJobs(jobs+6)} variant="contained">Next</Button>
+        <div className='buttonSection'>
+          <div className='buttonContainer'>
+            <Button onClick={() => ((jobs > 0)? setJobs(jobs-6): setJobs(0))} variant="contained">Back</Button>
+          </div>
+          <div className='buttonContainer'>
+            <Button onClick={() => setJobs(jobs+6)} variant="contained">Next</Button>
+          </div>
         </div>
         </div>
       </main>

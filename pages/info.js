@@ -17,6 +17,7 @@ export default function Info(){
         <>
             <Head>
                 <title>Info</title>
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <div className="listContainer">
                 <h1 id="topHeader"> Top Tech Startup Company List </h1>

@@ -153,4 +153,15 @@ a {
 .numberInput {
   width: 15%;
   text-align: center;
+  margin: 1rem;
+}
+.allJobsLink {
+  display: flex;
+  justify-content: flex-end;
+}
+.buttonContainer {
+  margin: 1rem;
+}
+.buttonSection {
+  display: flex;
 }
